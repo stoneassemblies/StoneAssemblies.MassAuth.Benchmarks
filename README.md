@@ -49,7 +49,7 @@ For this benckmark we run 3 instance of the authorization engine with some rules
 | **100** | **154.9 ms** | **18.87 ms** | **51.98 ms** | **136.9 ms** |
 
 
-## Multiple Message
+## Multiple Messages
 
 For this benckmark we run 3 instance of the authorization engine with some rules per message type. Some messages are sent at the same time (max 5) and all rules are evaluate. 
 
