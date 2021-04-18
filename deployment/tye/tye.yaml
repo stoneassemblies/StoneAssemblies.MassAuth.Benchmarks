@@ -1,43 +1,25 @@
 name: stoneassemblies-massauth
 network: stoneassemblies-massauth-network
 services:
-- name: stoneassemblies-massauth-bank-balance-services
-  project: ../../src/StoneAssemblies.MassAuth.Bank.Balance.Services/StoneAssemblies.MassAuth.Bank.Balance.Services.csproj
-  buildProperties: 
-  - name: Configuration
-    value: Debug
-  env:
-  - name: ASPNETCORE_ENVIRONMENT
-    value: Development
-  - name: RabbitMQ:Address
-    value: rabbitmq://localhost:6002
-  - name: RabbitMQ:Username
-    value: queuedemo
-  - name: RabbitMQ:Password
-    value: queuedemo
-  bindings:
-  - port: 6001
 - name: stoneassemblies-massauth-server
-  project: ../../src/StoneAssemblies.MassAuth.Server/StoneAssemblies.MassAuth.Server.csproj
-  replicas: 3
-  buildProperties: 
-  - name: Configuration
-    value: Debug
+  image: stoneassemblies/massauth-server:1.0.0-alpha0032
+  replicas: 5
   env:
   - name: ASPNETCORE_ENVIRONMENT
     value: Development
   - name: RabbitMQ:Address
-    value: rabbitmq://localhost:6002
+    value: rabbitmq://rabbitmq:5672
   - name: RabbitMQ:Username
     value: queuedemo
   - name: RabbitMQ:Password
     value: queuedemo
   - name: Extensions:RepositoryUrl
+    value: http://nexus:8081/repository/nuget-all/
   #  value: https://api.nuget.org/v3/index.json
-    value: ../../output/nuget-symbols/
+  #  value: ../../output/nuget-symbols/
   - name: Extensions:Packages:0
-    value: StoneAssemblies.MassAuth.Bank.Rules
-- name: stoneassemblies-massauth-rabbitmq
+    value: StoneAssemblies.MassAuth.Benchmarks.Rules
+- name: rabbitmq
   image: rabbitmq:3.8.3-management
   bindings:
   - name: rabbitmq
@@ -54,23 +36,24 @@ services:
   - name: RABBITMQ_DEFAULT_PASS
     value: queuedemo
 - name: stoneassemblies-massauth-proxy
-  project: ../../src/StoneAssemblies.MassAuth.Proxy/StoneAssemblies.MassAuth.Proxy.csproj
-  buildProperties: 
-  - name: Configuration
-    value: Debug
+  image: stoneassemblies/massauth-proxy:1.0.0-alpha0032
   env:
   - name: ASPNETCORE_ENVIRONMENT
     value: Development
   - name: RabbitMQ:Address
-    value: rabbitmq://localhost:6002
+    value: rabbitmq://rabbitmq:5672
   - name: RabbitMQ:Username
     value: queuedemo
   - name: RabbitMQ:Password
     value: queuedemo
   - name: Extensions:RepositoryUrl
+    value: http://nexus:8081/repository/nuget-all/
   #  value: https://api.nuget.org/v3/index.json
-    value: ../../output/nuget-symbols/
+  #  value: ../../output/nuget-symbols/
   - name: Extensions:Packages:0
-    value: StoneAssemblies.MassAuth.Bank.Messages
+    value: StoneAssemblies.MassAuth.Benchmarks.Messages
   bindings:
-  - port: 6004
+  - name: ingress
+    port: 6004
+    containerPort: 80
+    protocol: http
