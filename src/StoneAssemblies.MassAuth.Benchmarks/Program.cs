@@ -8,7 +8,7 @@
     {
         private static void Main(string[] args)
         {
-            var summary = BenchmarkRunner.Run<MassAuthBankBenchmark>();
+            var summary = BenchmarkRunner.Run<MassAuthRandomRulesBenchmark>();
         }
     }
 }

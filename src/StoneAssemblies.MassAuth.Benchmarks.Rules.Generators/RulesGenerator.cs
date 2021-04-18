@@ -22,10 +22,10 @@ namespace StoneAssemblies.MassAuth.Benchmarks.Rules
 ");
             for (var i = 1; i <= 100; i++)
             {
-                string textMessageName = $"TextMessage{i.ToString().PadLeft(3, '0')}";
+                var textMessageName = $"TextMessage{i.ToString().PadLeft(3, '0')}";
                 for (var j = 1; j < i + 1; j++)
                 {
-                    string ruleName = $"RandomRule{j.ToString().PadLeft(3, '0')}";
+                    var ruleName = $"RandomRule{j.ToString().PadLeft(3, '0')}";
                     var rule =
                         $@"public class {textMessageName}{ruleName} : IRule<AuthorizationRequestMessage<{textMessageName}>>
     {{
@@ -40,6 +40,30 @@ namespace StoneAssemblies.MassAuth.Benchmarks.Rules
         public Task<bool> EvaluateAsync(AuthorizationRequestMessage<{textMessageName}> message)
         {{
             return Task.FromResult(this.random.Next() % 2 == 0);
+        }}
+    }}";
+                    sourceBuilder.Append(rule);
+                }
+            }
+
+            for (var i = 1; i <= 100; i++)
+            {
+                var textMessageName = $"ValidTextMessage{i.ToString().PadLeft(3, '0')}";
+                for (var j = 1; j < i + 1; j++)
+                {
+                    var ruleName = $"ValidRule{j.ToString().PadLeft(3, '0')}";
+                    var rule =
+                        $@"public class {textMessageName}{ruleName} : IRule<AuthorizationRequestMessage<{textMessageName}>>
+    {{
+        public bool IsEnabled => true;
+
+        public string Name => ""Valid rule {j} for text message {i}"";
+
+        public int Priority {{ get; }}
+
+        public Task<bool> EvaluateAsync(AuthorizationRequestMessage<{textMessageName}> message)
+        {{
+            return Task.FromResult(true);
         }}
     }}";
                     sourceBuilder.Append(rule);
