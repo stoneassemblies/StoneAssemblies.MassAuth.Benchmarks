@@ -117,7 +117,6 @@ For this benckmark we run 5 instance of the authorization engine with some rules
 
 
 ```
-Runtime = .NET Core 5.0.4 (CoreCLR 5.0.421.11614, CoreFX 5.0.421.11614), X64 RyuJIT; GC = Concurrent Workstation      
 Mean = 805.041 ms, StdErr = 20.584 ms (2.56%), N = 87, StdDev = 191.994 ms                                            
 Min = 517.638 ms, Q1 = 657.391 ms, Median = 765.463 ms, Q3 = 933.272 ms, Max = 1,291.131 ms                           
 IQR = 275.881 ms, LowerFence = 243.570 ms, UpperFence = 1,347.093 ms                                                  
@@ -139,7 +138,6 @@ Skewness = 0.56, Kurtosis = 2.48, MValue = 3.25
 | **100** | **200** | **1,585.9 ms** | **199.28 ms** | **562.1 ms** |
 
 ```
-Runtime = .NET Core 5.0.4 (CoreCLR 5.0.421.11614, CoreFX 5.0.421.11614), X64 RyuJIT; GC = Concurrent Workstation      
 Mean = 1.586 s, StdErr = 0.059 s (3.69%), N = 92, StdDev = 0.562 s                                                    
 Min = 0.734 s, Q1 = 1.123 s, Median = 1.548 s, Q3 = 1.778 s, Max = 3.127 s                                            
 IQR = 0.656 s, LowerFence = 0.139 s, UpperFence = 2.762 s                                                             
