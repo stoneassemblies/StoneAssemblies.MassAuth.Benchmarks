@@ -33,26 +33,25 @@
 
     public class MassAuthValidRulesScaleBenchmark
     {
-        [Params(
-            "ValidTextMessage001",
-            "ValidTextMessage005",
-            "ValidTextMessage010",
-            "ValidTextMessage020",
-            "ValidTextMessage050",
-            "ValidTextMessage100")]
-        public string MessageType { get; set; }
 
-        [Params(1, 3, 5, 10)]
-        public int Paralellism { get; set; }
+        [Params(100)]
+        public int RulesCount { get; set; }
+
+        [Params(100, 200)]
+        public int ParallelRequests { get; set; }
+
 
         [Benchmark]
         public async Task TextMessageRequestAsync()
         {
+            using HttpClient httpClient = new HttpClient();
             var tasks = new List<Task>();
-            for (var i = 0; i < this.Paralellism; i++)
+            var parallelRequests = this.ParallelRequests;
+            for (var i = 0; i < parallelRequests; i++)
             {
-                var httpClient = new HttpClient();
-                var item = httpClient.GetAsync($"http://localhost:6004/api/Authorize/{this.MessageType}?Text=12345");
+                var requestUri =
+                    $"http://localhost:6004/api/Authorize/ValidTextMessage{this.RulesCount.ToString().PadLeft(3, '0')}?Text=12345";
+                var item = httpClient.GetAsync(requestUri);
                 tasks.Add(item);
             }
 

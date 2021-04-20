@@ -107,4 +107,13 @@ For this benckmark we run 5 instance of the authorization engine with some rules
 | **100** | **10** | **354.6 ms** | **24.68 ms** |  **70.82 ms** | **337.0 ms** |
 
 
+## Alright let's do this one last time
+
+For this benckmark we run 5 instance of the authorization engine with some rules per message type. Some messages are sent at the same time (max 200) and all rules are evaluate. 
+
+| Rules Count | Parallel Requests |       Mean |     Error |   StdDev |
+|----------- |----------------- |-----------:|----------:|---------:|
+| **100** | **100** |   **742.4 ms** |  **67.10 ms** | **187.0 ms** |
+| **100** | **200** | **1,445.3 ms** | **190.15 ms** | **530.1 ms** |
+
 
