@@ -9,7 +9,7 @@ For these benchmarks we generated a lot messages and rules types with very simpl
 
 The goal of theses benchmarks is test the evaluation speed, scalabilty and stability of the solution.
 
-The following diagram shows the components and their Interactions.
+The following diagram shows the components and their interactions.
 
 ![Benchmarks Components & & Interactions](images/diagram.png "Benchmarks Components & Interactions")
 
