@@ -9,6 +9,10 @@ For these benchmarks we generated a lot messages and rules types with very simpl
 
 The goal of theses benchmarks is test the evaluation speed, scalabilty and stability of the solution.
 
+The following diagram shows the components and their Interactions.
+
+![Benchmarks Components & & Interactions](images/diagram.png "Benchmarks Components & Interactions")
+
 # Hosting 
 
 The components used in this are the official docker images of Stone Assemblies MassAuth and rules are downloaded directly from the NuGet gallery.   
