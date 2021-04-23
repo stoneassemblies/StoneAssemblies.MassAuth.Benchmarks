@@ -8,13 +8,13 @@ services:
   - name: ASPNETCORE_ENVIRONMENT
     value: Development
   - name: RabbitMQ:Address
-    value: rabbitmq://rabbitmq:5672
+    value: rabbitmq://172.30.240.1:6002
   - name: RabbitMQ:Username
     value: queuedemo
   - name: RabbitMQ:Password
     value: queuedemo
   - name: Extensions:RepositoryUrl
-    value: http://nexus:8081/repository/nuget-all/
+    value: http://172.30.240.1:8081/repository/nuget-all/
   #  value: https://api.nuget.org/v3/index.json
   #  value: ../../output/nuget-symbols/
   - name: Extensions:Packages:0
@@ -41,13 +41,13 @@ services:
   - name: ASPNETCORE_ENVIRONMENT
     value: Development
   - name: RabbitMQ:Address
-    value: rabbitmq://rabbitmq:5672
+    value: rabbitmq://172.30.240.1:6002
   - name: RabbitMQ:Username
     value: queuedemo
   - name: RabbitMQ:Password
     value: queuedemo
   - name: Extensions:RepositoryUrl
-    value: http://nexus:8081/repository/nuget-all/
+    value: http://172.30.240.1:8081/repository/nuget-all/
   #  value: https://api.nuget.org/v3/index.json
   #  value: ../../output/nuget-symbols/
   - name: Extensions:Packages:0

@@ -1,4 +1,4 @@
-﻿wnamespace StoneAssemblies.MassAuth.Benchmarks
+﻿namespace StoneAssemblies.MassAuth.Benchmarks
 {
     using System.Net.Http;
     using System.Threading.Tasks;
