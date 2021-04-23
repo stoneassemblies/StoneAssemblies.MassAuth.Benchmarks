@@ -5,7 +5,7 @@ This repo includes some benchmarks of *Stone Assemblies MassAuth*.
 
 # Design
 
-For these benchmarks we generated a lot messages and rules types with very simple implementations. The rules and messages are available in StoneAssemblies.MassAuth.Benchmarks.Rules and StoneAssemblies.MassAuth.Benchmarks.Messages NuGet packages.
+For these benchmarks we generated a lot messages and rules types with very simple implementations. The rules and messages are available in StoneAssemblies.MassAuth.Benchmarks. Rules and StoneAssemblies.MassAuth.Benchmarks.Messages NuGet packages.
 
 The goal of theses benchmarks is test the evaluation speed, scalabilty and stability of the solution.
 
@@ -24,7 +24,7 @@ The software prerequisites to execute these benchmarks.
 
 These benchmarks were written using [BenchmarkDotNet](https://github.com/dotnet/BenchmarkDotNet)
 
-# Benckmarks
+# Benchmarks
 
 All benchmarks results were obtained on the following hardware.   
 
@@ -41,7 +41,7 @@ Intel Core i7-8750H CPU 2.20GHz (Coffee Lake), 1 CPU, 12 logical and 6 physical 
 
 ## Single Message
 
-For this benckmark we run 3 instance of the authorization engine with some rules per message type. A single one message is sent and all rules are evaluate. 
+For this benckmark we run 3 instances of the authorization engine with some rules per message type. A single one message is sent and all rules are evaluate. 
 
 |         Rules Count |     Mean |    Error |   StdDev |   Median |
 |-------------------- |---------:|---------:|---------:|---------:|
@@ -55,7 +55,7 @@ For this benckmark we run 3 instance of the authorization engine with some rules
 
 ## Multiple Messages
 
-For this benckmark we run 3 instance of the authorization engine with some rules per message type. Some messages are sent at the same time (max 5) and all rules are evaluate. 
+For this benckmark we run 3 instances of the authorization engine with some rules per message type. Some messages are sent at the same time (max 5) and all rules are evaluate. 
 
 |         Rules Count | Parallel Requests |     Mean |    Error |    StdDev |    Median |
 |-------------------- |------------ |---------:|---------:|----------:|----------:|
@@ -81,7 +81,7 @@ For this benckmark we run 3 instance of the authorization engine with some rules
 
 ## Scalability and stability
 
-For this benckmark we run 5 instance of the authorization engine with some rules per message type. Some messages are sent at the same time (max 10) and all rules are evaluate. 
+For this benckmark we run 5 instances of the authorization engine with some rules per message type. Some messages are sent at the same time (max 10) and all rules are evaluate. 
 
 |      Rules Count | Parallel Requests |     Mean |    Error |    StdDev |   Median |
 |----------------- |------------ |---------:|---------:|----------:|---------:|
@@ -113,7 +113,7 @@ For this benckmark we run 5 instance of the authorization engine with some rules
 
 ## Alright let's do this one last time
 
-For this benckmark we run 5 instance of the authorization engine with some rules per message type. Some messages are sent at the same time (max 200) and all rules are evaluate. 
+For this benckmark we run 5 instances of the authorization engine with some rules per message type. Some messages are sent at the same time (max 200) and all rules are evaluate. 
 
 | Rules Count | Parallel Requests |       Mean |     Error |   StdDev |
 |----------- |----------------- |-----------:|----------:|---------:|
