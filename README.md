@@ -1,7 +1,7 @@
 Stone Assemblies MassAuth Benckmarks
 ====================================
 
-This repo includes some benchmarks of *Stone Assemblies MassAuth*.
+This repo includes some benchmarks of *[Stone Assemblies MassAuth](https://github.com/stoneassemblies/StoneAssemblies.MassAuth)*.
 
 # Design
 
