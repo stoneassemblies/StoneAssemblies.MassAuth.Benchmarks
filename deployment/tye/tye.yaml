@@ -2,7 +2,7 @@ name: stoneassemblies-massauth
 network: stoneassemblies-massauth-network
 services:
 - name: stoneassemblies-massauth-server
-  image: stoneassemblies/massauth-server:1.0.0-alpha0032
+  image: stoneassemblies/massauth-server:1.0.0-alpha0057
   replicas: 5
   env:
   - name: ASPNETCORE_ENVIRONMENT
@@ -36,7 +36,7 @@ services:
   - name: RABBITMQ_DEFAULT_PASS
     value: queuedemo
 - name: stoneassemblies-massauth-proxy
-  image: stoneassemblies/massauth-proxy:1.0.0-alpha0032
+  image: stoneassemblies/massauth-proxy:1.0.0-alpha0057
   env:
   - name: ASPNETCORE_ENVIRONMENT
     value: Development
