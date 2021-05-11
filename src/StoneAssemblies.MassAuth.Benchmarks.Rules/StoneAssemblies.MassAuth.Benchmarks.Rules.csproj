@@ -8,8 +8,8 @@
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
 		<PackageReference Include="Serilog" Version="2.10.0" />
-		<PackageReference Include="StoneAssemblies.MassAuth.Messages" Version="1.0.0-alpha0032" />
-		<PackageReference Include="StoneAssemblies.MassAuth.Rules" Version="1.0.0-alpha0032" />
+		<PackageReference Include="StoneAssemblies.MassAuth.Messages" Version="1.0.0-alpha0057" />
+		<PackageReference Include="StoneAssemblies.MassAuth.Rules" Version="1.0.0-alpha0057" />
 	</ItemGroup>
 
 	<ItemGroup>
