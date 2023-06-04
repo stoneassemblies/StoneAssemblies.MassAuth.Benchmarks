@@ -65,7 +65,7 @@ Task("Restore")
   .Does(() => 
   {
       Information("Restoring Solution Packages");
-      DotNetCoreRestore(SolutionFileName, new DotNetCoreRestoreSettings()
+      DotNetRestore(SolutionFileName, new DotNetRestoreSettings()
       {
           Sources = new[] { nugetRepositoryProxy },
           NoCache = true
@@ -77,9 +77,9 @@ Task("Build")
   .IsDependentOn("Restore")
   .Does(() => 
   {
-      DotNetCoreBuild(
+      DotNetBuild(
                   SolutionFileName,
-                  new DotNetCoreBuildSettings()
+                  new DotNetBuildSettings()
                   {
                       Configuration = buildConfiguration,
                       ArgumentCustomization = args => args
@@ -178,7 +178,7 @@ Task("NuGetPack")
     for (int i = 0; i < ComponentProjects.Length; i++)
     {
         var componentProject = ComponentProjects[i];
-        var settings = new DotNetCorePackSettings
+        var settings = new DotNetPackSettings
         {
             Configuration = buildConfiguration,
             OutputDirectory = packageOutputDirectory,
@@ -188,7 +188,7 @@ Task("NuGetPack")
                 .Append($"/p:Version={NuGetVersionV2}")
         };
 
-        DotNetCorePack(componentProject, settings);
+        DotNetPack(componentProject, settings);
     }
 
     EnsureDirectoryExists("./output/nuget-symbols");
@@ -210,7 +210,7 @@ Task("NuGetPush")
 	var nugetFiles  = GetFiles("./output/nuget/*.nupkg");
 	foreach(var nugetFile in nugetFiles)
         {
-		DotNetCoreNuGetPush(nugetFile.ToString(), new DotNetCoreNuGetPushSettings {
+		DotNetNuGetPush(nugetFile.ToString(), new DotNetNuGetPushSettings {
 		     Source = nugetRepository,
 		     ApiKey = nugetApiKey
 		});

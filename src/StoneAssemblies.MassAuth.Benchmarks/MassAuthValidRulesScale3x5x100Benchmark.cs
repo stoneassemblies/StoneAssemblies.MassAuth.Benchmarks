@@ -6,14 +6,16 @@ namespace StoneAssemblies.MassAuth.Benchmarks
 
     using BenchmarkDotNet.Attributes;
 
-    public class MassAuthValidRulesScaleBenchmark
+    public class MassAuthValidRulesScale3x5x100Benchmark
     {
         private readonly HttpClient httpClient = new HttpClient();
 
-        [Params(100, 200)]
+        // [Params(100, 200)]
+        [Params(1, 3, 5)]
         public int ParallelRequests { get; set; }
 
-        [Params(100)]
+        // [Params(100)]
+        [Params(1, 5, 10, 20, 50, 100)]
         public int RulesCount { get; set; }
 
         [Benchmark]

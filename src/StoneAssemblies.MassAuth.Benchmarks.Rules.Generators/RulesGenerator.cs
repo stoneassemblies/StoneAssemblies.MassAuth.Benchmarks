@@ -27,7 +27,8 @@ namespace StoneAssemblies.MassAuth.Benchmarks.Rules
                 {
                     var ruleName = $"RandomRule{j.ToString().PadLeft(3, '0')}";
                     var rule =
-                        $@"public class {textMessageName}{ruleName} : IRule<AuthorizationRequestMessage<{textMessageName}>>
+                        $@"
+    public class {textMessageName}{ruleName} : IRule<AuthorizationRequestMessage<{textMessageName}>>
     {{
         private readonly Random random = new Random();
 
@@ -37,9 +38,9 @@ namespace StoneAssemblies.MassAuth.Benchmarks.Rules
 
         public int Priority {{ get; }}
 
-        public Task<bool> EvaluateAsync(AuthorizationRequestMessage<{textMessageName}> message)
+        public Task<EvaluationResult> EvaluateAsync(AuthorizationRequestMessage<{textMessageName}> message)
         {{
-            return Task.FromResult(this.random.Next() % 2 == 0);
+            return Task.FromResult(this.random.Next() % 2 == 0 ?  EvaluationResult.Success() : EvaluationResult.Error());
         }}
     }}";
                     sourceBuilder.Append(rule);
@@ -53,7 +54,8 @@ namespace StoneAssemblies.MassAuth.Benchmarks.Rules
                 {
                     var ruleName = $"ValidRule{j.ToString().PadLeft(3, '0')}";
                     var rule =
-                        $@"public class {textMessageName}{ruleName} : IRule<AuthorizationRequestMessage<{textMessageName}>>
+                        $@"
+    public class {textMessageName}{ruleName} : IRule<AuthorizationRequestMessage<{textMessageName}>>
     {{
         public bool IsEnabled => true;
 
@@ -61,9 +63,9 @@ namespace StoneAssemblies.MassAuth.Benchmarks.Rules
 
         public int Priority {{ get; }}
 
-        public Task<bool> EvaluateAsync(AuthorizationRequestMessage<{textMessageName}> message)
+        public Task<EvaluationResult> EvaluateAsync(AuthorizationRequestMessage<{textMessageName}> message)
         {{
-            return Task.FromResult(true);
+            return Task.FromResult(EvaluationResult.Success());
         }}
     }}";
                     sourceBuilder.Append(rule);

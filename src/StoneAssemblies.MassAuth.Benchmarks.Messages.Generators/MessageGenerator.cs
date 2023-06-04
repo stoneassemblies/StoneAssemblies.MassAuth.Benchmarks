@@ -25,7 +25,8 @@ namespace StoneAssemblies.MassAuth.Benchmarks.Messages.Generators
             for (var i = 1; i <= 100; i++)
             {
                 sourceBuilder.Append(
-                    $@"public class TextMessage{i.ToString().PadLeft(3, '0')}: MessageBase
+                    $@"
+    public class TextMessage{i.ToString().PadLeft(3, '0')}: MessageBase
     {{
         public string Text {{ get; set; }}
     }}");
@@ -34,7 +35,8 @@ namespace StoneAssemblies.MassAuth.Benchmarks.Messages.Generators
             for (var i = 1; i <= 100; i++)
             {
                 sourceBuilder.Append(
-                    $@"public class ValidTextMessage{i.ToString().PadLeft(3, '0')}: MessageBase
+                    $@"
+    public class ValidTextMessage{i.ToString().PadLeft(3, '0')}: MessageBase
     {{
         public string Text {{ get; set; }}
     }}");

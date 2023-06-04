@@ -1,11 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="StoneAssemblies.MassAuth.Messages" Version="1.0.0-alpha0057" />
+    <PackageReference Include="StoneAssemblies.MassAuth.Messages" Version="1.0.0-alpha0144" />
   </ItemGroup>
 
   <ItemGroup>

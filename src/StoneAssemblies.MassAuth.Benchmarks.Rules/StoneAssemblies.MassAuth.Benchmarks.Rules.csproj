@@ -1,15 +1,15 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFramework>net5.0</TargetFramework>
+		<TargetFramework>net6.0</TargetFramework>
 	</PropertyGroup>
 	<ItemGroup>
-		<PackageReference Include="Microsoft.Net.Compilers.Toolset" Version="3.9.0">
+		<PackageReference Include="Microsoft.Net.Compilers.Toolset" Version="4.6.0">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
-		<PackageReference Include="Serilog" Version="2.10.0" />
-		<PackageReference Include="StoneAssemblies.MassAuth.Messages" Version="1.0.0-alpha0057" />
-		<PackageReference Include="StoneAssemblies.MassAuth.Rules" Version="1.0.0-alpha0057" />
+		<PackageReference Include="Serilog" Version="2.12.0" />
+		<PackageReference Include="StoneAssemblies.MassAuth.Messages" Version="1.0.0-alpha0144" />
+		<PackageReference Include="StoneAssemblies.MassAuth.Rules" Version="1.0.0-alpha0144" />
 	</ItemGroup>
 
 	<ItemGroup>
