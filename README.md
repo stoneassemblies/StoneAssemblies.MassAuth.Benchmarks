@@ -54,7 +54,7 @@ For this benckmark we run 3 instances of the authorization engine with some rule
 
 ## Multiple Messages
 
-For this benckmark we run 3 instances of the authorization engine with some rules per message type. Some messages are sent at the same time (max 5) and all rules are evaluate. 
+For this benckmark, we run 3 instances of the authorization engine with some rules per message type. Multiple messages (up to 5) can be sent simultaneously and all rules are evaluated. 
 
 | Parallel Requests | Rules Count |          Mean |         Error |        StdDev |
 | ----------------- | ----------- | -------------:| -------------:| -------------:|
@@ -80,7 +80,7 @@ For this benckmark we run 3 instances of the authorization engine with some rule
 
 ## Scalability and stability
 
-For this benckmark we run 5 instances of the authorization engine with some rules per message type. Some messages are sent at the same time (max 10) and all rules are evaluate. 
+For this benckmark, we run 5 instances of the authorization engine with some rules per message type. Multiple messages (up to 10) can be sent simultaneously and all rules are evaluated.
 
 | Parallel Requests | Rules Count |          Mean |         Error |        StdDev |
 | ----------------- | ----------- | -------------:| -------------:| -------------:|
@@ -112,7 +112,7 @@ For this benckmark we run 5 instances of the authorization engine with some rule
 
 ## Alright let's do this one last time
 
-For this benckmark we run 5 instances of the authorization engine with some rules per message type. Some messages are sent at the same time (max 150) and all rules are evaluate.
+For this benckmark, we run 5 instances of the authorization engine with some rules per message type. Multiple messages (up to 150) can be sent simultaneously and all rules are evaluated.
 
 
 | Parallel Requests | Rules Count |     Mean |    Error |   StdDev |
