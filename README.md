@@ -40,7 +40,7 @@ BenchmarkDotNet=v0.13.5, OS=Windows 11 (10.0.22621.1778/22H2/2022Update/SunValle
 
 ## Single Message
 
-For this benckmark we run 3 instances of the authorization engine with some rules per message type. A single one message is sent and all rules are evaluate. 
+For this benchmark, we run 3 instances of the authorization engine with some rules per message type. A single one message is sent and all rules are evaluate. 
 
 | Rules Count |         Mean |         Error |        StdDev |
 | ----------- | ------------:| -------------:| -------------:|
@@ -54,7 +54,7 @@ For this benckmark we run 3 instances of the authorization engine with some rule
 
 ## Multiple Messages
 
-For this benckmark, we run 3 instances of the authorization engine with some rules per message type. Multiple messages (up to 5) can be sent simultaneously and all rules are evaluated. 
+For this benchmark, we run 3 instances of the authorization engine with some rules per message type. Multiple messages (up to 5) can be sent simultaneously and all rules are evaluated. 
 
 | Parallel Requests | Rules Count |          Mean |         Error |        StdDev |
 | ----------------- | ----------- | -------------:| -------------:| -------------:|
@@ -112,7 +112,7 @@ For this benckmark, we run 5 instances of the authorization engine with some rul
 
 ## Alright let's do this one last time
 
-For this benckmark, we run 5 instances of the authorization engine with some rules per message type. Multiple messages (up to 150) can be sent simultaneously and all rules are evaluated.
+For this benchmark, we run 5 instances of the authorization engine with some rules per message type. Multiple messages (up to 150) can be sent simultaneously and all rules are evaluated.
 
 
 | Parallel Requests | Rules Count |     Mean |    Error |   StdDev |
